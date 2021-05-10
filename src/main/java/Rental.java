@@ -1,5 +1,3 @@
-package main;
-
 class Rental
 {
     private Movie movie;
