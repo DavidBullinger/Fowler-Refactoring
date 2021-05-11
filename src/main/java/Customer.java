@@ -30,7 +30,6 @@ class Customer
         while (enum_rentals.hasMoreElements())
         {
             Rental currentRental = (Rental) enum_rentals.nextElement();
-            // add frequent renter points
 
             //show figures for this rental
             result += "\t" + currentRental.getMovie().getTitle() + "\t" + "\t" + currentRental.getDaysRented() + "\t" + String.valueOf(currentRental.getCharge()) + "\n";
