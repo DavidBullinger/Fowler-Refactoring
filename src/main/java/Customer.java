@@ -32,7 +32,7 @@ class Customer
             Rental currentRental = (Rental) enum_rentals.nextElement();
 
             //show figures for this rental
-            result += "\t" + currentRental.getMovie().getTitle() + "\t" + "\t" + currentRental.getDaysRented() + "\t" + String.valueOf(currentRental.getCharge()) + "\n";
+            result += "\t" + currentRental.getMovie().getTitle() + "\t" + "\t" + currentRental.getDaysRented() + "\t" + String.valueOf(currentRental.getMovie().getCharge(currentRental.getDaysRented())) + "\n";
         }
         //add footer lines
         result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
@@ -46,7 +46,7 @@ class Customer
         Enumeration rentalsE = rentals.elements();
         while (rentalsE.hasMoreElements()) {
             Rental each = (Rental) rentalsE.nextElement();
-            result += each.getCharge();
+            result += each.getMovie().getCharge(each.getDaysRented());
         }
         return result;
     }
@@ -57,7 +57,7 @@ class Customer
         Enumeration rentalsE = rentals.elements();
         while (rentalsE.hasMoreElements()) {
             Rental each = (Rental) rentalsE.nextElement();
-            result += each.getFrequentRenterPoints();
+            result += each.movie.getFrequentRenterPoints(each.getDaysRented());
         }
         return result;
     }
