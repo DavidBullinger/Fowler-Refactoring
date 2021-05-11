@@ -19,4 +19,13 @@ class Rental
         return movie;
     }
 
+    int getFrequentRenterPoints()
+    {
+        return movie.getFrequentRenterPoints(daysRented);
+    }
+
+    public double getCharge()
+    {
+        return movie.getCharge(daysRented);
+    }
 }
